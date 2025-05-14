@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>드림위드컴퍼니 | 포트폴리오</title>
+
+    <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="./js/jquery.scrolla.min.js"></script>
+    <script src="./js/splitting.min.js"></script>
+    <script src="./js/wow.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+            integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+            integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+<header>
+    <div class="container innerHeader d-flex justify-content-between align-items-center">
+
+        <h1 class="logo">
+            <img src="./img/logo.png" alt="로고">
+            <!--                        <img src="./images/logo2.png" alt="로고2">-->
+
+        </h1>
+        <div class="gnb gap-2 d-flex align-items-center   ">
+            <a href="#" class="kmong">
+                <img src="./img/kmong.png" alt="">
+                크몽문의</a>
+
+            <a href="#" class="site">
+                <img src="./img/w_el.png" alt="로고">
+                사이트 이동</a>
+
+        </div>
+
+    </div>
+</header>
+<main>
+    <section class="section1 ">
+        <div class="container">
+            <h2>
+                <p class="split1" data-splitting>2024년 크몽어워즈 홈페이지부문 수상</p>
+                <p class="split2" data-splitting>크몽 최상위 전문가 등급 MASTER 인증</p>
+            </h2>
+            <div class="count-section">
+                <div class="row  g-5 justify-content-center">
+                    <div class="col col-12 col-md-4">
+                        <div class="badge">신규제작 누적건수</div>
+                        <p><span id="new_count">0</span>건</p>
+                    </div>
+                    <div class="col col-12 col-md-4">
+                        <div class="badge">유지보수 누적건수</div>
+                        <p><span id="fix_count">0</span>건</p>
+                    </div>
+                    <div class="col col-12 col-md-4">
+                        <div class="badge">최근 60일 제작 진행 건수</div>
+                        <p><span id="latest_count">0</span>건</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-3">
+                <div class="col">
+                    <div class="card h-100 mb-3">
+                        <img src="./img/1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body p-4 text-center">
+                            <h3 class="card-title   fw-bold mb-3 fs-3">
+                                고객 맞춤형 설계로, <br> 브랜드에 딱 맞는 디자인
+                            </h3>
+                            <p class="card-text dark fs-6 fw-medium">
+                                원하는 기능, 필요한 요소, 브랜드 감성까지 <br>
+                                모두 반영해 독창적인 홈페이지를 완성해 드립니다.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 mb-3">
+                        <img src="./img/1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body p-4 text-center">
+                            <h3 class="card-title   fw-bold mb-3 fs-3">
+                                직접 개발한 맞춤형 솔루션
+                            </h3>
+                            <p class="card-text dark fs-6 fw-medium">
+                                임대형이 아닌 독립 개발 구조로 <br>
+                                기획부터 확장까지 유연하게 대응합니다.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 mb-3">
+                        <img src="./img/1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body p-4 text-center">
+                            <h3 class="card-title   fw-bold mb-3 fs-3">
+                                비즈니스 최적화 솔루션
+                            </h3>
+                            <p class="card-text dark fs-6 fw-medium">
+                                플랫폼부터 CRM, ERP까지 <br>
+                                맞춤 개발로 효율성과 성장을 이끕니다.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section2">
+        <div class="title en2">
+            <p class="a">Portfolio</p>
+            <p class="b">Projects</p>
+        </div>
+
+        <div class="container">
+            <ul class="d-flex flex-wrap gap-3 workList " id="workList">
+
+            </ul>
+        </div>
+
+    </section>
+    <section class="section3">
+        <p>
+            <span>View more works?</span>
+            <a class="link" href="">CLICK HERE!</a>
+        </p>
+    </section>
+</main>
+
+</body>
+
+</html>

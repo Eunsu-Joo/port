@@ -1,0 +1,358 @@
+@charset "UTF-8";
+/* title animation */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+body {
+    font-family: 'Noto Sans KR','Fredoka','Poppins','Bebas Neue',sans-serif;
+    color: #333;
+    line-height: 1.3;
+    font-weight: 400;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    background: 	#FAF8F5;
+    overflow-x: hidden;
+}
+dl, ol, ul {
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    background: transparent;
+}
+.innerHeader{
+    transition:all  0.3s cubic-bezier(.46,.03,.52,.96);
+
+}
+.innerHeader .logo{
+    width: 150px;
+
+    transition: all 0.3s;
+    font-size: 1rem;
+}
+
+.innerHeader .logo  img{
+    width: 100%;
+
+    transition: all 0.3s cubic-bezier(.46,.03,.52,.96);
+}
+.dark{
+    color: #555;
+}
+.gnb a{
+    padding: 0.5em 1.2em;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 500;
+    border-radius: 16px;
+    color: #fff;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+}
+.gnb a img{
+    width: 25px;
+    margin-right: 4px;
+}
+a.kmong {
+    background: #F7E400;
+    color: #1F2123;
+    font-weight: 700;
+
+}
+a.site{
+    background: #0075C2;
+
+}
+
+/* 픽스해더 영역 */
+
+
+.point {
+    font-family: "Fredoka", sans-serif;
+    font-weight: bold;
+}
+main{
+    padding-top: 100px;
+
+}
+
+.card{
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 9px 15px 20px 2px rgba(0, 0, 0, 0.1);
+}
+.section1{
+    margin-top: 100px;
+}
+.section1 h2{
+    text-align: center;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 3rem;
+}
+.count-section {
+    text-align: center;
+    padding: 150px 0;
+
+}
+
+.count-section .col {
+    position: relative;
+}
+
+.count-section .badge {
+    background-color: #D5CABD;
+    color: #333333;
+    padding: 6px 16px;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.count-section p {
+    font-size: 62px;
+    font-weight: 700;
+    margin: 0;
+    color: #222;
+}
+
+.count-section .col:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 1px;
+    height: 60%;
+    background-color: #ddd;
+}
+
+
+
+
+@keyframes slide-up2 {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    30% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    /* 더 빨리 진행되게 하기 위해 */
+}
+
+
+.split1 .char {
+    animation: slide-up2 0.4s cubic-bezier(.5, 0, .5, 1) both;
+    animation-delay: calc(100ms * var(--char-index));
+}
+
+.split2 .char {
+    animation: slide-up2 0.4s cubic-bezier(.5, 0, .5, 1) both;
+    animation-delay: calc(100ms * var(--char-index) + 1s); /* 1초 후에 시작 */
+}
+
+
+.section2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.section2 .title {
+    width: 100%;
+    padding: 200px 0;
+    font-size: 7.2916666667vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 0.8;
+    letter-spacing: -3px;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+    .section2 .title {
+        font-size: 9.1145833333vw;
+    }
+}
+@media (min-width: 0px) and (max-width: 767px) {
+    .section2 .title {
+        font-size: 16.9082125604vw;
+    }
+}
+
+
+.tile {
+    /* display: inline-block;  ❌ 제거 */
+    display: block; /* ✅ 블록 요소로 전환 */
+    margin: 0; /* ❗ Bootstrap의 g-3이 여백을 처리하므로 필요 없음 */
+
+    opacity: 0.99;
+    overflow: hidden;
+    position: relative;
+    border-radius: 3px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+.tile::before {
+    content: '';
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+    width: 100%;
+    height: 50%;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 2;
+    transition: top 0.3s, opacity 0.3s;
+}
+
+.tile img {
+    display: block;
+    max-width: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: all 1s;
+}
+
+.tile .details {
+    font-size: 16px;
+    padding: 20px;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+}
+
+.tile .details span {
+    display: block;
+    opacity: 0;
+    position: relative;
+    top: 100px;
+    transition: top 0.3s, opacity 0.3s;
+    padding-bottom: 0;
+    padding-top: 0;
+
+}
+
+.tile .details .title {
+    line-height: 1;
+    font-weight: 600;
+    font-size: 36px;
+    margin-bottom: 12px;
+    text-align: center;
+
+    display: block;
+
+}
+
+
+.tile:focus::before,
+.tile:hover::before,
+.tile:focus span,
+.tile:hover span {
+    opacity: 1;
+}
+
+.tile:focus::before,
+.tile:hover::before {
+    top: 50%;
+}
+
+.tile:focus .details span,
+.tile:hover .details span {
+    top: 0;
+}
+
+.tile:focus .title,
+.tile:hover .title {
+    transition-delay: 0.15s;
+}
+
+.tile:focus .info,
+.tile:hover .info {
+    transition-delay: 0.25s;
+}
+.tile:focus img,
+.tile:hover img {
+   transform: scale(1.1);
+}
+
+.section2 .workList img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section3 {
+    --target: 100%;
+    width: 100%;
+    background: linear-gradient(to right, #000 var(--target), #FAF8F5 var(--target));
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.section3 p {
+    font-family: "Open Sans", sans-serif;
+    color: white;
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    text-align: center;
+    letter-spacing: -0.02em;
+    background: linear-gradient(to right, #FAF8F5 var(--target), #000 var(--target));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 100%;
+    display: block;
+    line-height: 0.95;
+    position: relative;
+}
+.section3 p span {
+    font-size: 0.5em;
+    display: block;
+}
+
+.section3 p a {
+
+    display: inline-block;
+    font-weight: bold;
+    color: inherit; /* 텍스트 색 유지 (그라디언트 텍스트 적용 시) */
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.section3 p a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px; /* 텍스트와 간격 조절 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10%;
+    height: 3px;
+    background-color: #0075C2; /* 노란색 */
+    transition: width 0.3s ease;
+}
+
+.section3 p a:hover::after {
+    width: 30%;
+}
