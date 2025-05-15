@@ -4,28 +4,6 @@ $(function () {
         $('html, body').animate({scrollTop: 0});
     });
 
-    // function animateCount(id, target, duration = 1500) {
-    //     const element = document.getElementById(id);
-    //     const start = 0;
-    //     const increment = target / (duration / 10);
-    //     let current = start;
-    //
-    //     const timer = setInterval(() => {
-    //         current += increment;
-    //         if (current >= target) {
-    //             current = target;
-    //             clearInterval(timer);
-    //         }
-    //         element.textContent = Math.floor(current).toLocaleString();
-    //     }, 10);
-    // }
-    //
-    // // 숫자 애니메이션 실행
-    // animateCount('new_count', 1084);
-    // animateCount('fix_count', 11825);
-    // animateCount('latest_count', 120);
-
-
 
     let revealContainers = document.querySelectorAll(".reveal");
     revealContainers.forEach((container, index) => {
@@ -188,7 +166,7 @@ $(function () {
 
         onLeave: () => {
             gsap.to("body", {
-                backgroundColor: "#fff",
+                backgroundColor: "var(--bg)",
                 color: "#333",
                 duration: 0.4,
                 overwrite: true
