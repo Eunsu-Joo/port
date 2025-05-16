@@ -1,10 +1,9 @@
 $(function () {
-    Splitting();
+
     $('#logo').click(function () {
         $('html, body').animate({scrollTop: 0});
     });
-
-
+    // 메인 이미지 효과
     let revealContainers = document.querySelectorAll(".reveal");
     revealContainers.forEach((container, index) => {
         let image = container.querySelector("img");
@@ -37,8 +36,56 @@ $(function () {
             ease: Power2.out
         }, `-=${1.5}`); // 겹쳐서 시작 (동기화)
     });
-// .section2 배경과 글자색 변경 - .section3 진입 20% 전에 시작
 
+    // 모바일 초기 셋팅 & parallax
+    gsap.set(".pContent", { autoAlpha: 0, xPercent: -100 });
+    gsap.set(".pImage", { autoAlpha: 0, xPercent: 100, scale: 1.3 });
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".pSection",
+            start: "top 80%",
+            toggleActions: "play none none play"
+        }
+    })
+        .to(".pContent", {
+            xPercent: 0,
+            autoAlpha: 1,
+            duration: 1.2,
+            ease: "power2.out"
+        })
+        .to(".pImage", {
+            xPercent: 0,
+            scale: 1,
+            autoAlpha: 1,
+            duration: 1.4,
+            ease: "power2.out"
+        }, "-=1.0");
+
+    gsap.to(".pContent", {
+        yPercent: -100,
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".pSection",
+            // start: "top bottom", // the default values
+            // end: "bottom top",
+            scrub: true
+        },
+    });
+
+    gsap.to(".pImage", {
+        yPercent: 100,
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".pSection",
+            // start: "top bottom", // the default values
+            // end: "bottom top",
+            scrub: true
+        },
+    });
+
+
+
+// .section2 배경과 글자색 변경 - .section3 진입 20% 전에 시작
     gsap.timeline({
         scrollTrigger: {
             trigger: ".section2 .title",
@@ -68,6 +115,8 @@ $(function () {
                 duration: 1.2
             }, "-=1.0" // 이전 애니메이션과 겹치게
         );
+
+
 // .section2 배경과 글자색 변경 - .section3 진입 20% 전에 시작
     gsap.to("body", {
         backgroundColor: "var(--kmong-color)",
@@ -113,7 +162,7 @@ $(function () {
         const group = linkData.slice(i, i + 3);
 
         const elem = document.createElement("div");
-        elem.className = "row row-cols-1 row-cols-md-3 g-4 ";
+        elem.className = "row row-cols-1  row-cols-lg-3 g-4 ";
 
         group.forEach((item, index) => {
             const col = document.createElement("div");
@@ -152,32 +201,6 @@ $(function () {
             });
         })
     }, 300); // 데이터 렌더링 완료 이후 실행 (임시 지연)
-    ScrollTrigger.create({
-        trigger: ".section0",
-        start: "bottom 80%", // section0의 bottom이 화면의 80% 지점일 때 트리거됨
-        end:'50% end',
-        onEnterBack: () => {
-            gsap.to(".section0", {
-                scale: 1,
-                duration: 2,
-            });
-
-        },
-
-        onLeave: () => {
-            gsap.to("body", {
-                backgroundColor: "var(--bg)",
-                color: "#333",
-                duration: 0.4,
-                overwrite: true
-            });
-            gsap.to(".section0", {
-                scale: 0,
-                duration: 2,
-            });
-        },
-
-    });
 
 
 
@@ -218,7 +241,7 @@ $(function () {
     ScrollTrigger.create({
         trigger: ".pinned-carousel",
         start: "top top",
-        end: `+=${scrollLength+100}`,
+        end: `+=${scrollLength}`,
         scrub: 1,
         onEnter: () => {
             gsap.to("body", {
@@ -237,6 +260,33 @@ $(function () {
             });
         }
     });
+
+    ScrollTrigger.create({
+        trigger: ".section1-pc",
+        start: "bottom 80%", // section0의 bottom이 화면의 80% 지점일 때 트리거됨
+        end:'50% end',
+        onEnterBack: () => {
+            gsap.to(".section1-pc", {
+                scale: 1,
+                duration: 2,
+            });
+
+        },
+        onLeave: () => {
+            gsap.to("body", {
+                backgroundColor: "var(--bg)",
+                color: "#333",
+                duration: 0.4,
+                overwrite: true
+            });
+            gsap.to(".section1-pc", {
+                scale: 0,
+                duration: 2,
+            });
+        },
+
+    });
+
 
 // ✅ section3 등장 애니메이션 (pin 해제 후 자연스럽게 등장)
     gsap.to(".section3", {

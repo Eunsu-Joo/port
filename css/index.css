@@ -2,31 +2,36 @@
 /* title animation */
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-:root{
-    --kmong-yellow:#F7E400;
+
+:root {
+    --kmong-yellow: #F7E400;
     --kmong-color: #1F2123;
-    --bg:#F5F5F0;
+    --bg: #F5F5F0;
 }
+
 body {
-    font-family: 'Noto Sans KR','Open Sans','Jua','Bebas Neue',sans-serif;
+    font-family: 'Noto Sans KR', 'Open Sans', 'Jua', 'Bebas Neue', sans-serif;
     line-height: 1.3;
     font-weight: 400;
     font-size: 14px;
     -webkit-font-smoothing: antialiased;
-    background-color:var(--bg);  /* 초기 진입 시 바로 적용되도록 */
+    background-color: var(--bg); /* 초기 진입 시 바로 적용되도록 */
     color: #333;
     transition: background-color 0.4s ease, color 0.4s ease;
     overflow-x: hidden;
 }
+
 dl, ol, ul {
     margin: 0;
     padding: 0;
 }
-a{
+
+a {
     text-decoration: none;
     color: inherit;
 }
-header{
+
+header {
     width: 100%;
     position: fixed;
     top: 0;
@@ -38,11 +43,13 @@ header{
     padding: 12px 0;
     background: transparent;
 }
-.innerHeader{
-    transition:all  0.3s cubic-bezier(.46,.03,.52,.96);
+
+.innerHeader {
+    transition: all 0.3s cubic-bezier(.46, .03, .52, .96);
 
 }
-.innerHeader .logo{
+
+.innerHeader .logo {
     width: 150px;
     cursor: pointer;
     transition: all 0.3s;
@@ -51,15 +58,17 @@ header{
     position: relative;
 }
 
-.innerHeader .logo  img{
+.innerHeader .logo img {
     width: 100%;
 
-    transition: all 0.3s cubic-bezier(.46,.03,.52,.96);
+    transition: all 0.3s cubic-bezier(.46, .03, .52, .96);
 }
-.dark{
+
+.dark {
     color: #555;
 }
-.gnb a{
+
+.gnb a {
     padding: 0.5em 1.2em;
     font-size: 18px;
     line-height: 1.5;
@@ -70,17 +79,20 @@ header{
     display: flex;
     align-items: center;
 }
-.gnb a img{
+
+.gnb a img {
     width: 25px;
     margin-right: 4px;
 }
+
 a.kmong {
     background: #F7E400;
     color: #1F2123;
     font-weight: 700;
 
 }
-a.site{
+
+a.site {
     background: #0075C2;
 
 }
@@ -92,251 +104,151 @@ a.site{
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
 }
-.work{
+
+.work {
     font-family: "Work Sans", sans-serif;
     font-weight: 300;
 }
 
-.card{
+.card {
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 9px 15px 20px 2px rgba(0, 0, 0, 0.1);
 }
 
-.section0{
+.section1 {
     width: 100%;
     height: 100vh;
     position: relative;
 
 }
 
-.main-text{
+.main-text {
     font-family: "Work Sans", sans-serif;
     font-weight: 300;
-    font-size: 10vw;
+    font-size: 9.5vw;
     line-height: .8;
     letter-spacing: -.07em;
 
 }
-.template-text{
-    text-align: center;
-    margin-top: 80px;
 
-}
-.section0  .contents{
-    font-size: 32px;
-    position: absolute;
-    right: 2%;
-    bottom: 5%;
-    letter-spacing: -2px;
+.reveal-container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 60px);
+    top: 60px;
 }
 
-
-.section0 .reveal1 {
+.section1 .reveal1 {
     visibility: hidden;
     width: 60%;
     /*bottom: 0;*/
-    position: absolute;
+    /*position: absolute;*/
     overflow: hidden;
-    left: 0;
-    bottom: 7%;
+    /*left: 0;*/
+    /*top: 0;*/
     min-width: 600px;
 }
-.section0 .reveal1 img {
+
+.section1 .reveal1 img {
 
     width: 100%;
     object-fit: cover;
     transform-origin: left;
 }
-.section0 .reveal2 {
+
+.section1 .reveal2 {
     visibility: hidden;
     position: absolute;
     width: 15%;
     aspect-ratio: 9/16;
     overflow: hidden;
     left: 50%;
-    bottom: 0;
+    bottom: 4vw;
+
 }
-.section0 .reveal2 img {
+
+.section1 .reveal2 img {
     width: 100%;
     object-fit: cover;
     transform-origin: right;
 }
-/* 모바일 (작은 스마트폰) */
-@media (max-width: 479px) { }
 
-/* 일반 모바일 */
-@media (max-width: 767px) {
-    /*.section0  .contents{*/
-    /*    font-size: 26px;*/
-    /*    right: 0%;*/
-    /*    bottom: 5%;*/
-    /*    text-align: right;*/
-    /*}*/
-    /*.section0 .reveal2 {*/
-    /*    left: 48%;*/
-    /*}*/
-    .section0 .reveal1{
-        top: 50%;
-        bottom: auto;
-        transform: translateY(-50%);
-        aspect-ratio: 16/9;
-        left: 0;
-        width: 67%;
-    }
-    .section0 .reveal1 img{
-        height: 100%;
-    }
-    .section0 .reveal2{
-        width: 17%;
-        top: 25%;
-        right: 25% ;
-        left: auto;
-    }
-    .section0  .contents{
-
-    }
-    .section0 .main-text{
-        display: none;
-    }
-}
-
-/* 태블릿 */
-@media (min-width: 768px) and (max-width: 1023px) {
-    /*.section0  .contents{*/
-    /*    font-size: 26px;*/
-    /*    right: 0%;*/
-    /*    bottom: 5%;*/
-    /*    text-align: right;*/
-    /*}*/
-    /*.section0 .reveal2 {*/
-    /*    left: 48%;*/
-    /*}*/
-    .section0 .reveal1{
-        top: 50%;
-        bottom: auto;
-        transform: translateY(-50%);
-        aspect-ratio: 16/9;
-        left: 0;
-        width: 67%;
-    }
-    .section0 .reveal1 img{
-        height: 100%;
-    }
-    .section0 .reveal2{
-        width: 17%;
-        top: 25%;
-        right: 25% ;
-        left: auto;
-    }
-    .section0  .contents{
-        font-size: 22px;
-        text-align: right;
-    }
-    .section0 .main-text{
-        font-size: 10vw;
-    }
-}
-
-/* 노트북 / 소형 데스크탑 */
-@media (min-width: 1024px) and (max-width: 1439px) {
-    .section0  .contents{
-        font-size: 26px;
-        text-align: right;
-    }
-    .section0 .reveal2 {
-        left: 48%;
-    }
-}
-
-/* 일반 데스크탑 */
-@media (min-width: 1440px) and (max-width: 1919px) {
-    .section0  .contents{
-        font-size: 28px;
-        text-align: right;
-    }
-}
-
-.section1{
-    margin-top: 100px;
-    overflow-x: hidden;
-}
-.section1 h2{
+.template-text {
     text-align: center;
-    line-height: 1;
-    font-weight: 600;
-    font-size: 3rem;
-}
-.count-section {
-    text-align: center;
-    padding: 150px 0;
-
+    margin-top: 80px;
 }
 
-.count-section .col {
-    position: relative;
-}
-
-.count-section .badge {
-    background-color: #D5CABD;
-    color: #333333;
-    padding: 6px 16px;
-    font-weight: 600;
-    font-size: 14px;
-    border-radius: 20px;
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-.count-section p {
-    font-size: 62px;
-    font-weight: 700;
-    margin: 0;
-    color: #222;
-}
-
-.count-section .col:not(:last-child)::after {
-    content: "";
+.section1 .contents {
+    font-size: 32px;
     position: absolute;
-    top: 10px;
-    right: 0;
-    width: 1px;
-    height: 60%;
-    background-color: #ddd;
+    right: 2%;
+    letter-spacing: -2px;
+    bottom: 1vw;
+}
+
+.section1-mobile {
+    width: 100%;
+    height: auto;
 }
 
 
+.pSection {
+    position: relative;
+    padding-top: 50%;
+    padding-bottom: 35%;
+    height: 100%;
+    overflow: hidden;
+}
 
+.pContent {
+    padding-left: 4vw;
+    position: relative;
+    top: -20vw;
+}
 
-@keyframes slide-up2 {
-    0% {
-        transform: translateY(30px);
-        opacity: 0;
-    }
+.pContent .main-text {
+    font-size: 15vw;
+}
 
-    30% {
-        transform: translateY(30px);
-        opacity: 0;
-    }
-    /* 더 빨리 진행되게 하기 위해 */
+.pSection .main-text span {
+    display: block;
+}
+
+.pContent .contents {
+    letter-spacing: -2px;
+    font-size: 2.8vw;
 }
 
 
-.split1 .char {
-    animation: slide-up2 0.4s cubic-bezier(.5, 0, .5, 1) both;
-    animation-delay: calc(100ms * var(--char-index));
+.pImage {
+    width: 33vw;
+    position: absolute;
+    top: 0;
+    right: 5%;
+    aspect-ratio: 9/16;
+    /*max-width: 300px;*/
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 320px;
+
 }
 
-.split2 .char {
-    animation: slide-up2 0.4s cubic-bezier(.5, 0, .5, 1) both;
-    animation-delay: calc(100ms * var(--char-index) + 1s); /* 1초 후에 시작 */
+.pImage img {
+    width: 100%;
+
+    object-fit: cover;
+    transform-origin: left;
 }
 
-
-.section2 {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.pContent,
+.pImage {
+    opacity: 0;
+    transform: translateX(0); /* JS에서만 xPercent 주고 CSS는 0으로 둠 */
+    will-change: transform, opacity;
+}
+.section1-mobile{
+    display: none;
 }
 .title {
     width: 100%;
@@ -348,10 +260,18 @@ a.site{
     line-height: 0.8;
     letter-spacing: -3px;
 }
-.portfolio-text{
+
+.section2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.portfolio-text {
     padding: 200px 0;
     overflow-x: hidden;
 }
+
 .portfolio-img {
     width: 100%;
     height: 100%;
@@ -364,22 +284,145 @@ a.site{
     opacity: 1;
 }
 
-.section2 .portfolio-img img{
+/* 일반 데스크탑 */
+@media (min-width: 1440px) and (max-width: 1919px) {
+    .section1 .reveal1 {
+        width: 70vw;
+    }
+
+    .section1 .contents {
+        font-size: 28px;
+        text-align: right;
+    }
+
+    .section1 .reveal2 {
+        width: 18vw;
+    }
+}
+
+/* 노트북 / 소형 데스크탑 */
+@media (min-width: 1025px) and (max-width: 1439px) {
+    .section1 .contents {
+        font-size: 2vw;
+        text-align: right;
+    }
+
+    .section1 .reveal1 {
+        width: 70vw;
+    }
+
+    .section1 .reveal2 {
+        width: 18vw;
+        left: 50vw;
+    }
+
+    .gnb a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .innerHeader .logo {
+        width: 120px;
+    }
+
+    .portfolio-text {
+        padding:10vw 0;
+    }
+
+    .portfolio-img {
+        aspect-ratio: 16/9;
+        /*min-width: 320px;*/
+        margin: 0 auto;
+    }
+
+    .section2 .portfolio-img img {
+        height: auto;
+    }
+
+    .gnb a {
+        padding: 0.3em 0.8em;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+
+    .title {
+        font-size: 11vw;
+    }
+
+    .portfolio-img:hover .img-default {
+        opacity: 0 !important;
+    }
+
+    .portfolio-img:hover .img-hover {
+        opacity: 1 !important;
+    }
+    .section1-pc {
+        display: none;
+    }
+    .section1-mobile{
+        display: block;
+    }
+}
+
+
+
+/* 일반 모바일 */
+@media (max-width: 767px) {
+    .pSection {
+        position: relative;
+        padding-top: 50%;
+        padding-bottom: 50%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .pContent {
+        padding-left: 4vw;
+        position: relative;
+        top: 0;
+    }
+
+    .pContent .main-text {
+        font-size: 15vw;
+    }
+
+    .pSection .main-text span {
+        display: block;
+    }
+
+    .pContent .contents {
+        letter-spacing: -2px;
+        font-size: 14px;
+    }
+    .pImage {
+        width: 33vw;
+        top: 21vw;
+        right: 3vw;
+
+        max-width: 320px;
+
+    }
+}
+
+
+
+.section2 .portfolio-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: opacity 0.6s ;
+    transition: opacity 0.6s;
 }
-.section2 .portfolio-img img:nth-child(1){
-    opacity: 1 ;
+
+.section2 .portfolio-img img:nth-child(1) {
+    opacity: 1;
 }
-.section2 .portfolio-img img:nth-child(2){
+
+.section2 .portfolio-img img:nth-child(2) {
     transform: translateY(-100%);
     opacity: 0;
 }
-
-
-
 
 
 .section3 {
@@ -407,6 +450,7 @@ a.site{
     line-height: 0.95;
     position: relative;
 }
+
 .section3 p span {
     font-family: "Open Sans", sans-serif;
     font-size: 0.5em;
@@ -440,50 +484,6 @@ a.site{
 }
 
 
-
-@media (min-width: 992px) {
-    .title {
-        font-size: 9.1145833333vw;
-    }
-    .portfolio-img:hover .img-default{
-        opacity: 0 !important;
-    }
-    .portfolio-img:hover .img-hover{
-        opacity: 1 !important;
-    }
-
-}
-@media  (max-width: 991px) {
-    .title {
-        font-size: 16.9082125604vw;
-        padding: 150px 0;
-    }
-    .portfolio-img{
-        aspect-ratio: 16/9;
-        /*min-width: 320px;*/
-        margin: 0 auto;
-    }
-    .section2 .portfolio-img img{
-        height: auto;
-    }
-    .gnb a{
-        padding: 0.3em 0.8em;
-        font-size: 14px;
-        border-radius: 8px;
-    }
-    .innerHeader .logo{
-        width: 6em;
-    }
-}
-
-
-
-
-
-
-
-
-
 .pinned-carousel {
     height: 100vh;
     display: flex;
@@ -513,18 +513,21 @@ a.site{
     justify-content: center;
     padding: 0 24px;
 }
+
 .swiper-slide a {
     width: 100%;
     aspect-ratio: 9/16;
     display: inline-block;
     border-radius: 10px;
 }
+
 .swiper-slide img {
     width: 100%;
     height: 100%;
 
     object-fit: cover;
 }
+
 /*.swiper-slide img {*/
 /*    width: 100%;*/
 /*    height: auto;*/
